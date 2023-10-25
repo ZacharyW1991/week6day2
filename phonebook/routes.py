@@ -6,9 +6,10 @@ from phonebook.forms import SubmitForm
 def index():
     return render_template('index.html')
 
-@app.route('/submit')
+@app.route('/submit', methods=['get', 'post'])
 def submission():
     form=SubmitForm()
+    print(form.validate_on_submit())
     if form.validate_on_submit():
         first_name=form.first_name.data
         last_name=form.last_name.data

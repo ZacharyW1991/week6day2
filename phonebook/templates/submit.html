@@ -9,7 +9,8 @@
 {% block content %}
 
 <div class=" col">
-    <form action="" method="post"></form>
+    <form action="" method="post">
+    {{form.csrf_token}}    
     {{form.first_name.label}}
     {{form.first_name(class='form-control', placeholder='First Name')}}
 
@@ -21,4 +22,9 @@
 
     {{form.address.label}}
     {{form.address(class='form-control', placeholder='Address')}}
+
+    {{form.submit.label}}
+    {{form.submit}}
+</form>
 </div>
+{% endblock %}
